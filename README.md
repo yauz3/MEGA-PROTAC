@@ -15,8 +15,8 @@ Note: Before running the project, ensure that the library PATH located on "../bi
 
 To install DockQ, please follow the protocol outlined in their official documentation:
 
-DockQ GitHub Repository
-
+[DockQ GitHub Repository
+](https://github.com/bjornwallner/DockQ)
 
 *3*- PIZSA Installation:
 To intall PIZSA, please follow the protocol outlined in their official documentation:

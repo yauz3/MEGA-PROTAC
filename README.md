@@ -2,6 +2,28 @@
 
 
 **Pre-installation:**
+*1*- MEGA DOCK Installation:
+Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
+
+Please refer to their documentation to install MEGA DOCK correctly before continuing with this project.
+https://github.com/akiyamalab/MEGADOCK
+
+Note: Before running the project, ensure that the library PATH located on "../bin/MEGADOCK/Makefile" and compiler settings are properly configured on your system.
+
+
+*2*- DockQ Installation:
+
+To install DockQ, please follow the protocol outlined in their official documentation:
+
+DockQ GitHub Repository
+
+
+*3*- PIZSA Installation:
+To intall PIZSA, please follow the protocol outlined in their official documentation:
+http://cospi.iiserpune.ac.in/pizsa/Download/Download.html
+
+The three program files are located in the *BIN* directory.
+
 
 
 ```bash
@@ -10,6 +32,8 @@ conda activate mamba-env
 ```
 
 
+
+
 bunlar yüklenip değiştirilmesi lazım.
-FCC_path="/home/yavuz/fcc/scripts"
-voronota_path="/home/yavuz/voronota_1.22.3149"
+FCC_path="../fcc/scripts"
+voronota_path="../voronota_1.22.3149"

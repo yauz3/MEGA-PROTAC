@@ -30,7 +30,26 @@ To intall PIZSA, please follow the protocol outlined in their official documenta
 
 The three program files are located in the *BIN* directory.
 
+<h2>How to set up the environment</h2>
 
+*4* Make sure FCC and Vorquma paths are correct on your system
+FCC_path="../fcc/scripts"
+voronota_path="../voronota_1.22.3149"
+
+
+**1- Conda Installation**:
+-We have provided an Anaconda environment file for easy set-up. If you do not have Anaconda installed, you can get Miniconda from [HERE](https://docs.anaconda.com/free/miniconda/).
+
+Then, install ```bash mamba```:
+```bash
+conda install -c conda-forge mamba
+```
+
+If an individual encounters difficulties in implementing mamba in their primary setting, proceed to establish a fresh environment for mamba by following these steps:
+```bash
+conda create -n mamba-env -c conda-forge mamba
+conda activate mamba-env
+```
 
 ```bash
 conda create -n mamba-env -c conda-forge mamba
@@ -41,5 +60,4 @@ conda activate mamba-env
 
 
 bunlar yüklenip değiştirilmesi lazım.
-FCC_path="../fcc/scripts"
-voronota_path="../voronota_1.22.3149"
+

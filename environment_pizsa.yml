@@ -1,0 +1,6 @@
+name: pizsa
+channels:
+  - defaults
+dependencies:
+  - python=2.7
+  - numpy

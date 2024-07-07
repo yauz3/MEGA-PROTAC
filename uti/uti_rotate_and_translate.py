@@ -103,8 +103,8 @@ def rotate_poi_three_axes_with_ligands(pdb,
                     z_angle_name = str(z_angle).replace(".", "-")
                     file_name=str(pdb).replace("_complex","")
                     result_file = f"{file_name}_x_{x_angle_name}_y_{y_angle_name}_z_{z_angle_name}_complex.pdb"
-                    print("result_file")
-                    print(result_file)
+                    #print("result_file")
+                    #print(result_file)
                     cmd.save(result_file)
                     cmd.remove(target)
                     cmd.save(f"{file_name}_x_{x_angle_name}_y_{y_angle_name}_z_{z_angle_name}_ligand.pdb")

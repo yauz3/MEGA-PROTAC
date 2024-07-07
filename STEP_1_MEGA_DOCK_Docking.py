@@ -34,6 +34,18 @@ current_path = os.getcwd()
 MEGA_DOCK_PATH = f"{current_path}/bin/MEGADOCK-master"
 
 
+# Check_out_output_folder
+folder_path = "outputs/Megadock_OUT"
+
+# If the folder has not been there, create it.
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+    print(f"{folder_path} formed!")
+else:
+    print(f"{folder_path} has been already there.")
+
+
+
 def mega_dock_protein_protein(protein, number):
     # the paths for input files, which obtained by BOTCP study
     # https://www.sciencedirect.com/science/article/pii/S2667318523000168

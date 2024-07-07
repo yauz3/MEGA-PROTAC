@@ -1,0 +1,5 @@
+scoria==1.0.5
+mdtraj
+MDAnalysis
+freesasa
+kbutil

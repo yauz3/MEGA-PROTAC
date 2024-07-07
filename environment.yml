@@ -1,0 +1,17 @@
+name: mega_protac
+channels:
+  - conda-forge
+  - schrodinger
+dependencies:
+  - python=3.10.12
+  - biopython
+  - ca-certificates
+  - openssl
+  - pymol
+  - vtk
+  - certifi
+  - pymol-open-source
+  - pandas
+  - tqdm
+  - scipy
+prefix: /home/yavuz/anaconda3/envs/mega_protac

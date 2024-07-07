@@ -62,6 +62,7 @@ for protein in pdb_listem:
                                                                 ligand_chain=ligand_chain)
         if 3 < distance < 20:
             filtered_list.append(complex)
+    print("\n\n\nReport:")
     print("Ligand_based_filtration has been finished!")
     print("Input number:", len(pdb_list))
     print("Remaning protein number:", len(filtered_list))

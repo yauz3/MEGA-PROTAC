@@ -296,7 +296,7 @@ def pizsa_score(first_filtered,input_path):
         os.chdir(uti_directory)
         try:
             process = subprocess.run(
-                ["conda", "run", "-n", "rdkit_p2", "python2", "ranking_PIZSA_cluster_rank.py", "--protein",
+                ["conda", "run", "-n", "pizsa", "python2", "ranking_PIZSA_cluster_rank.py", "--protein",
                  f"{protein}.pdb", "--input_path",
                  input_path],
                 capture_output=True, text=True)

@@ -72,6 +72,7 @@ for protein in pdb_listem:
         # the limits to filter MEGA DOCK seeds
         if 3 < distance < 20:
             filtered_list.append(complex)
+    print("\n\n\nReport:")
     print("Input number:", len(pdb_list))
     print("Remaning protein number:",len(filtered_list))
     with open(f'ligand_filtration.json', 'w') as f:

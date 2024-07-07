@@ -12,7 +12,7 @@ Please refer to their documentation to install MEGA DOCK correctly before contin
 [MEGA DOCK GitHub Repository
 ](https://github.com/akiyamalab/MEGADOCK)
 
-Note: Before running the project, ensure that the library PATH located on "../bin/MEGADOCK/Makefile" and compiler settings are properly configured on your system.
+Note: Before running the project, ensure that the library PATH is located on "../bin/MEGADOCK/Makefile" and that compiler settings are properly configured on your system.
 
 
 *2*- DockQ Installation:
@@ -23,18 +23,19 @@ To install DockQ, please follow the protocol outlined in their official document
 ](https://github.com/bjornwallner/DockQ)
 
 *3*- PIZSA Installation:
-To intall PIZSA, please follow the protocol outlined in their official documentation:
+To install PIZSA, please follow the protocol outlined in their official documentation:
 
 [PIZSA Website
 ](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html)
 
 The three program files are located in the *BIN* directory.
 
-<h2>How to set up the environment</h2>
 
 *4* Make sure FCC and Vorquma paths are correct on your system
 FCC_path="../fcc/scripts"
 voronota_path="../voronota_1.22.3149"
+
+<h2>How to set up the environment</h2>
 
 
 **1- Conda Installation**:

@@ -39,6 +39,8 @@ The three program files are located in the *BIN* directory.
 
 "../uti/ranking_of_cluster_faster.py"
 
+The paths should be arrange before run:
+
 FCC_path="../fcc/scripts"
 
 voronota_path="../voronota_1.22.3149"

@@ -32,7 +32,9 @@ The three program files are located in the *BIN* directory.
 
 
 *4* Make sure FCC and Vorquma paths are correct on your system
+
 FCC_path="../fcc/scripts"
+
 voronota_path="../voronota_1.22.3149"
 
 <h2>How to set up the environment</h2>

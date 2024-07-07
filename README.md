@@ -31,7 +31,7 @@ To install PIZSA, please follow the protocol outlined in their official document
 The three program files are located in the *BIN* directory.
 
 
-*4* Make sure FCC and Vorquma paths are correct on your system
+*4*- Make sure FCC and Vorquma paths are correct on your system
 
 FCC_path="../fcc/scripts"
 

@@ -32,8 +32,11 @@ The three program files are located in the *BIN* directory.
 
 
 *4*- Make sure FCC and Vorquma paths are correct on the files:
+
 "../uti/clustering_fast.py"
+
 "../uti/formation_searh_space_small.py"
+
 "../uti/ranking_of_cluster_faster.py"
 
 FCC_path="../fcc/scripts"

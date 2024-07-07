@@ -47,6 +47,10 @@ voronota_path="../voronota_1.22.3149"
 
 fcc="../fcc"
 
+*5*- Install pyrangg
+
+https://github.com/thelahunginjeet/pyrankagg/tree/master
+
 
 <h2>How to set up the environment</h2>
 

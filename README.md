@@ -45,7 +45,7 @@ FCC_path="../fcc/scripts"
 
 voronota_path="../voronota_1.22.3149"
 
-fcc="/home/yavuz/fcc"
+fcc="../fcc"
 
 
 <h2>How to set up the environment</h2>

@@ -25,6 +25,10 @@ from uti import protein_uti
 random.seed(42)
 
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+test_input_path = os.path.join(PROJECT_ROOT, "test_inputs")
+
+
 def find_test_inputs_directory(start_path):
     path = start_path
     while path != os.path.dirname(path):  # Kök dizine ulaşana kadar devam et
@@ -33,6 +37,7 @@ def find_test_inputs_directory(start_path):
             return uti_path
         path = os.path.dirname(path)
     return None
+
 
 
 
@@ -50,8 +55,8 @@ def translate_three_axes_with_ligands(pdb,
                     os.chdir(input_path)
                     cmd.reinitialize()
                     cmd.load(f"{pdb}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{target.split('_')[0]}/{target}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{ligand.split('_')[0]}/{ligand}.pdb")
+                    cmd.load(f"{test_input_path}/{target.split('_')[0]}/{target}.pdb")
+                    cmd.load(f"{test_input_path}/{ligand.split('_')[0]}/{ligand}.pdb")
                     cmd.align(ligand, pdb)
                     cmd.align(target, pdb)
                     cmd.remove(pdb)
@@ -86,8 +91,8 @@ def rotate_poi_three_axes_with_ligands(pdb,
                     os.chdir(input_path)
                     cmd.reinitialize()
                     cmd.load(f"{pdb}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{target.split('_')[0]}/{target}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{ligand.split('_')[0]}/{ligand}.pdb")
+                    cmd.load(f"{test_input_path}/{target.split('_')[0]}/{target}.pdb")
+                    cmd.load(f"{test_input_path}/{ligand.split('_')[0]}/{ligand}.pdb")
                     cmd.align(ligand, pdb)
                     cmd.align(target, pdb)
                     cmd.remove(pdb)
@@ -114,8 +119,8 @@ def rotate_poi_three_axes_with_ligands(pdb,
                     os.chdir(input_path)
                     cmd.reinitialize()
                     cmd.load(f"{pdb}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{pdb}/{target}.pdb")
-                    cmd.load(f"/home/yavuz/yavuz_proje/protac/test_new/{pdb}/{ligand}.pdb")
+                    cmd.load(f"{test_input_path}/{pdb}/{target}.pdb")
+                    cmd.load(f"{test_input_path}/{pdb}/{ligand}.pdb")
                     cmd.align(ligand, pdb)
                     cmd.align(target, pdb)
                     cmd.remove(pdb)

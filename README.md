@@ -72,7 +72,7 @@ conda activate mamba-env
 **2- Conda Env Formation**:
 - To establish a conda environment, please execute the following code:
 ```bash
-mamba env create -n mega_protact -f environment.yml
+mamba env create -f environment.yml
 ```
 
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.

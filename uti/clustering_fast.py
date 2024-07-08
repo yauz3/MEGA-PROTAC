@@ -4,11 +4,10 @@ import shutil
 import re
 import subprocess
 
-""""""
-FCC_path="/home/yavuz/fcc/scripts"
-voronota_path="/home/yavuz/voronota_1.22.3149"
-fcc="/home/yavuz/fcc"
-""""""
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) # ..
+FCC_path = os.path.join(PROJECT_ROOT, "bin/fcc/scripts")
+voronota_path = os.path.join(PROJECT_ROOT, "bin/voronota")
+fcc= os.path.join(PROJECT_ROOT, "bin/fcc")
 
 def prepare_input_file(input_path,file_list):
     os.chdir(input_path)

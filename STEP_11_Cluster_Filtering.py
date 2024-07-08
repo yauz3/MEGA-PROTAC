@@ -133,4 +133,4 @@ for protein in pdb_listem:
     #time.sleep(5)
 end_time = time.time()
 elapsed_time = end_time - start_time
-print("İşlem süresi:", elapsed_time, "saniye")
+print("Run time:", elapsed_time, "seconds")

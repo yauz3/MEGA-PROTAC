@@ -1,0 +1,17 @@
+InterfaceBEG                             : deneme_X-deneme_X
+Input_pdb                                : deneme.pdb
+Interface                                : deneme_X-deneme_X
+Number of Interacting Residue Pairs      : 19   
+Distance Threshold (A)                   : 4.00
+Potential Type                           : all
+Raw Score                                : -3352.756
+Normalized Raw Score                     : -176.461
+Average Background Score                 : -215.889
+Standard Deviation                       : 56.569
+Z-score                                  : 0.697
+Z-score threshold                        : 1.720
+Optimal Alpha fraction                   : 0.481
+Binding Prediction                       : Unstable association (NON-BINDER)                                                                   
+InterfaceTER
+
+

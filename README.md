@@ -3,7 +3,7 @@
 
 **Pre-installation:**
 
-First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into **./bin** dictionary.
+First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ), [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html), [Voromqa](https://github.com/kliment-olechnovic/voronota) and [FCC](https://github.com/haddocking/fcc) into **./bin** dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
@@ -90,12 +90,6 @@ pip install -r requirements.txt
 ```
 NOTE: Please make sure installation into the *mega_protac* environment. 
 
-https://github.com/thelahunginjeet/pyrankagg/tree/master
-
-```bash
-python2 setup.py build
-python2 setup.py install
-```
 
 **4 - Make predictions**
 
@@ -191,7 +185,7 @@ python3 STEP_13_Cluster_ranking_clusters.py
 - MEGA PROTAC defaults to perform docking PROTAC into the first-ranked protein in the first cluster. Kindly note that the parameters have been reorganised to demonstrate the functioning of MEGA PROTAC. Hence, the chosen value of 10 must be increased to a minimum of 200, as specified in the paper.
 
 ```bash
-python3 python3 STEP_14_PROTAC_docking.py
+python3 STEP_14_PROTAC_docking.py
 ```
 
 **Acknowledgements**
@@ -220,3 +214,4 @@ python3 python3 STEP_14_PROTAC_docking.py
 [8] Weng, Gaoqi, et al. "Integrative modeling of PROTAC-mediated ternary complexes." Journal of Medicinal Chemistry 64.21 (2021): 16271-16281.
 
 [9] Rao, Arjun, et al. "Bayesian optimization for ternary complex prediction (BOTCP)." Artificial Intelligence in the Life Sciences 3 (2023): 100072.
+

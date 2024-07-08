@@ -3,6 +3,7 @@
 
 **Pre-installation:**
 
+First, create a *bin* dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into *bin* dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:

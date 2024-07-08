@@ -1,28 +1,30 @@
-<h1> MEGA PROTAC: PROTAC-Mediated Ternary Complex Formation Pipeline based on MEGADOCK with Sequential Filtering integrated with Rank Aggregation. </h1>
-
-
 **Pre-installation:**
 
+First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into **./bin** dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
-
-Please refer to their documentation to install MEGA DOCK correctly before continuing with this project.
-
-[MEGA DOCK GitHub Repository
+@@ -13,42 +14,37 @@ Please refer to their documentation to install MEGA DOCK correctly before contin
 ](https://github.com/akiyamalab/MEGADOCK)
 
 Note: Before running the project, ensure that the library PATH is located on "./bin/MEGADOCK/Makefile" and that compiler settings are properly configured on your system.
 Put the MEGA DOCK file into the *bin* dictionary.
+Put the MEGA DOCK file into the **./bin** dictionary.
 
+HINT: megadock and megadock-gpu should be in the folder. Otherwise, the MEGA PROTAC won't work because of failure installation for MEGADOCK.
 
 *2*- DockQ [1] Installation:
+
+*2*- DockQ [1] Installation: 
 
 To install DockQ, please follow the protocol outlined in their official documentation:
 
 [DockQ GitHub Repository
 ](https://github.com/bjornwallner/DockQ)
 Put the DOCKQ file into the *bin* dictionary.
+Put the DOCKQ file into the **./bin** dictionary.
+
+HINT: DockQ has been used in the validation step. MEGA PROTAC can be used without DockQ, but it is necessary for validation on test tests.
 
 *3*- PIZSA [2] Installation:
 To install PIZSA, please follow the protocol outlined in their official documentation:
@@ -41,51 +43,49 @@ Make sure FCC [3] and VoroMQA [4] paths are correct on the files:
 "../uti/formation_searh_space_small.py"
 
 "../uti/ranking_of_cluster_faster.py"
+Put the PIZSA file into the **./bin** dictionary.
 
 The paths should be arranged before a run:
+HINT: **./uti/ranking_PIZSA_cluster_rank.py** should be worked in the PIZSA environment.
+Be careful about the **err_dir** path in **./bin/run_PIZSA.py**
 
 FCC_path="../fcc/scripts"
+*4*- Install [Voromqa](https://github.com/kliment-olechnovic/voronota); and put the Voromqa [4] file into **./bin**
 
 voronota_path="../voronota_1.22.3149"
+HINT: The "voromqa" binary should be after the successful installation of Voromqa.
 
 fcc="../fcc"
+*5*- Install [FCC](https://github.com/haddocking/fcc), and put FCC [3] into **./bin**
 
 
 <h2>How to set up the environment</h2>
-
-
-**1- Conda Installation**:
--We have provided an Anaconda environment file for easy set-up. If you do not have Anaconda installed, you can get Miniconda from [HERE](https://docs.anaconda.com/free/miniconda/).
-
-Then, install ```bash mamba```:
-```bash
-conda install -c conda-forge mamba
-```
-
-If an individual encounters difficulties in implementing mamba in their primary setting, proceed to establish a fresh environment for mamba by following these steps:
-```bash
-conda create -n mamba-env -c conda-forge mamba
-conda activate mamba-env
-```
-
+@@ -71,32 +67,28 @@ conda activate mamba-env
 **2- Conda Env Formation**:
 - To establish a conda environment, please execute the following code:
 ```bash
+<<<<<<< HEAD
+mamba env create -f environment.yml
+=======
 mamba env create -n mega_protact -f environment.yml
+>>>>>>> c5778318 (read_me)
 ```
 
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.
 
 ```bash
 mamba env create -n pizsa -f environment_pizsa.yml
+mamba env create -f environment_pizsa.yml
 ```
 
 **3- Activate Conda Env**:
 - Before running MEF-AlloSite, enable the conda environment.
 ```bash
 mamba activate mega_protact
+mamba activate mega_protac
 ```
 It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
+It should be noted that the terminal may need to be closed and re-opened to activate the mega_protac environment.
 
 Next, proceed to install supplementary packages using the pip command as follows:
 
@@ -93,116 +93,11 @@ Next, proceed to install supplementary packages using the pip command as follows
 pip install -r requirements.txt
 ```
 NOTE: Please make sure installation into the *mega_protact* environment. 
+NOTE: Please make sure installation into the *mega_protac* environment. 
 
 https://github.com/thelahunginjeet/pyrankagg/tree/master
 
-```bash
-python2 setup.py build
-python2 setup.py install
-```
-
-**4 - Make predictions**
-
-MEGA PROTAC consists of 14 Python scripts designed to investigate ternary structures for PROTACs. While some scripts may have similar functionalities, we have streamlined the process to facilitate the straightforward execution of the MEGA PROTAC analysis.
-
-
-- The MEGA PROTAC initiates the MEGA DOCK process to identify the initial search space, which can also be referred to as seeds.
-```bash
-python3 STEP_1_MEGA_DOCK_Docking.py
-```
-
-- MEGA PROTAC filtrates protein-protein complexes based on their ligand distance.
-```bash
-python3 STEP_2_Ligand_Filtration_MEGA_DOCK_Seeds.py
-```
-
-- The second filtration has been implemented by protein-based docking, utilising MDAnalysis [5], SASA [6], Energy [7], and PIZSA [2].
-```bash
-python3 STEP_3_Filtrate_and_Rank_MEGA_DOCK_Seeds.py
-```
-
-NOTE: if you faced "ZeroDivisionError: integer division or modulo by zero" error. The PIZSA score probably has not worked properly. To solve this problem, go for:
-```bash
-mamba activate pızsa
-```
-
-Then, try to execute 
-```bash
-python2 ranking_PIZSA_cluster_rank.py -p -i
-```
-you can find help --help option
-
-- Following filtration, MEGA PROTAC employs rank aggregation to prioritise protein complexes and identify the most favourable candidate for subsequent investigation. Here, the script selects only the **top 10** proteins for the sake of representation. These selected proteins have been translated to enlarge the search space.
-
-```bash
-python3 STEP_4_Take_Top_N_with_ligand_from_MEGA_DOCK_Seeds.py
-```
-
-- The same ligand filtration has been used to filtrate translated proteins.
-
-```bash
-python3 STEP_5_Ligand_Filtration_Translated.py
-```
-
-- The same protein-based filtration has been used to filtrate translated proteins.
-
-```bash
-python3 STEP_6_Filtrate_and_Rank_Translation.py
-```
-
-- In the seventh step, rank aggregation has been used to select the **top 10** translated protein to search on rotation. 
-
-```bash
-python3 STEP_7_Take_Top_N_Translated_Complex_with_ligand.py
-```
-
-- The same ligand filtration has been used to filtrate rotated proteins.
-
-```bash
-python3 STEP_8_Ligand_Filtration_For_Translated.py
-```
-
-- The same protein-based filtration has been used to filtrate rotated proteins.
-
-```bash
-python3 STEP_9_Filtrate_and_Rank_Rotation.py
-```
-
-- The selected proteins have been clustered using FCC.
-
-```bash
-python3 STEP_10_Clustering.py
-```
-
-- The selected clusters have been filtered based on energy.
-
-```bash
-python3 STEP_11_Cluster_Filtering.py
-```
-
-- The remaining protein has been reclustered.
-
-```bash
-python3 STEP_12_reClustering.py
-```
-
-- The reclustered proteins have been reranked using our rank aggregation.
-
-```bash
-python3 STEP_13_Cluster_ranking_clusters.py
-```
-- The final step is local docking, which can be done using any other molecular docking program, such as ZDock.
-- MEGA PROTAC defaults to perform docking PROTAC into the first-ranked protein in the first cluster. Kindly note that the parameters have been reorganised to demonstrate the functioning of MEGA PROTAC. Hence, the chosen value of 10 must be increased to a minimum of 200, as specified in the paper.
-
-```bash
-python3 STEP_14_PROTAC_docking.py
-```
-
-**Acknowledgements**
-
-- We express our heartfelt gratitude to the creators of all the software components that constitute the PROTAC-Model [8] pipeline.
-- The authors of BOTCP [9] are acknowledged for their generous contribution of data.
-
+@@ -210,28 +202,6 @@ python3 python3 STEP_14_PROTAC_docking.py
 
 
 **References**

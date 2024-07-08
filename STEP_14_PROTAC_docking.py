@@ -35,7 +35,7 @@ random.seed(42)
 current_path = os.getcwd()
 
 # MEGA DOCK path to execute the program
-MEGA_DOCK_PATH = f"{current_path}/bin/MEGADOCK-master"
+MEGA_DOCK_PATH = f"{current_path}/bin/MEGADOCK"
 
 
 def protac_into_protein_protein(receptor, target):

@@ -4,3 +4,4 @@ channels:
 dependencies:
   - python=2.7
   - numpy
+prefix: /home/yavuz/anaconda3/envs/pizsa

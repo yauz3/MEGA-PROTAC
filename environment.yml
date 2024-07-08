@@ -3,11 +3,11 @@ channels:
   - conda-forge
   - schrodinger
 dependencies:
-  - python=3.10.12
+  - python=3.8.*
   - biopython
   - ca-certificates
   - openssl
-  - pymol
+  - pymol=2.5.0
   - vtk
   - certifi
   - pymol-open-source

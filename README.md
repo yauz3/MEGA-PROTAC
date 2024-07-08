@@ -84,16 +84,16 @@ mamba env create -f environment_pizsa.yml
 **3- Activate Conda Env**:
 - Before running MEF-AlloSite, enable the conda environment.
 ```bash
-mamba activate mega_protact
+mamba activate mega_protac
 ```
-It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
+It should be noted that the terminal may need to be closed and re-opened to activate the mega_protac environment.
 
 Next, proceed to install supplementary packages using the pip command as follows:
 
 ```bash
 pip install -r requirements.txt
 ```
-NOTE: Please make sure installation into the *mega_protact* environment. 
+NOTE: Please make sure installation into the *mega_protac* environment. 
 
 https://github.com/thelahunginjeet/pyrankagg/tree/master
 

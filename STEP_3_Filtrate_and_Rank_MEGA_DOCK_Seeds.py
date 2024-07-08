@@ -157,7 +157,7 @@ for protein in pdb_listem:
     print(vorqma_pizsa)
     with open(f'rank_aggregation.json', 'w') as f:
         json.dump(vorqma_pizsa, f)
-    print("\n\n\n"")
+    print("\n\n\n")
     print("######################")
     print("Summary:")
     print("The number of protein after ligand-based filtration:",len(pdb_without_pdb))

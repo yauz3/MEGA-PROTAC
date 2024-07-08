@@ -1,12 +1,16 @@
 <h1> MEGA PROTAC: PROTAC-Mediated Ternary Complex Formation Pipeline based on MEGADOCK with Sequential Filtering integrated with Rank Aggregation. </h1>
 
+
 **Pre-installation:**
 
-First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into **./bin** dictionary.
+First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ), [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html), [Voromqa](https://github.com/kliment-olechnovic/voronota) and [FCC](https://github.com/haddocking/fcc) into **./bin** dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
-	@@ -13,42 +14,37 @@ Please refer to their documentation to install MEGA DOCK correctly before contin
+
+Please refer to their documentation to install MEGA DOCK correctly before continuing with this project.
+
+[MEGA DOCK GitHub Repository
 ](https://github.com/akiyamalab/MEGADOCK)
 
 Note: Before running the project, ensure that the library PATH is located on "./bin/MEGADOCK/Makefile" and that compiler settings are properly configured on your system.
@@ -63,28 +67,14 @@ conda activate mamba-env
 **2- Conda Env Formation**:
 - To establish a conda environment, please execute the following code:
 ```bash
-mamba env create -n mega_protact -f environment.yml
+mamba env create -f environment.yml
 ```
 
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.
 
 ```bash
-mamba env create -n pizsa -f environment_pizsa.yml
+mamba env create -f environment_pizsa.yml
 ```
-
-**3- Activate Conda Env**:
-- Before running MEF-AlloSite, enable the conda environment.
-```bash
-mamba activate mega_protact
-```
-It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
-
-Next, proceed to install supplementary packages using the pip command as follows:
-
-```bash
-pip install -r requirements.txt
-```
-NOTE: Please make sure installation into the *mega_protact* environment. 
 
 **3- Activate Conda Env**:
 - Before running MEF-AlloSite, enable the conda environment.
@@ -99,20 +89,6 @@ Next, proceed to install supplementary packages using the pip command as follows
 pip install -r requirements.txt
 ```
 NOTE: Please make sure installation into the *mega_protac* environment. 
-
-**3- Activate Conda Env**:
-- Before running MEF-AlloSite, enable the conda environment.
-```bash
-mamba activate mega_protact
-```
-It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
-
-Next, proceed to install supplementary packages using the pip command as follows:
-
-```bash
-pip install -r requirements.txt
-```
-NOTE: Please make sure installation into the *mega_protact* environment. 
 
 
 **4 - Make predictions**

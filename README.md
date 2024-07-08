@@ -17,13 +17,15 @@ Note: Before running the project, ensure that the library PATH is located on "./
 Put the MEGA DOCK file into the **./bin** dictionary.
 
 
-*2*- DockQ [1] Installation:
+*2*- DockQ [1] Installation: 
 
 To install DockQ, please follow the protocol outlined in their official documentation:
 
 [DockQ GitHub Repository
 ](https://github.com/bjornwallner/DockQ)
 Put the DOCKQ file into the **./bin** dictionary.
+
+NOTE: DockQ has been used in the validation step. MEGA PROTAC can be used without DockQ, but it is necessary for validation on test tests.
 
 *3*- PIZSA [2] Installation:
 To install PIZSA, please follow the protocol outlined in their official documentation:

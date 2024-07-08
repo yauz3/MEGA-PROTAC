@@ -78,7 +78,7 @@ mamba env create -f environment.yml
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.
 
 ```bash
-mamba env create -n pizsa -f environment_pizsa.yml
+mamba env create -f environment_pizsa.yml
 ```
 
 **3- Activate Conda Env**:

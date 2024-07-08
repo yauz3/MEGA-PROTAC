@@ -44,18 +44,47 @@ HINT: The "voromqa" binary should be after the successful installation of Voromq
 
 
 <h2>How to set up the environment</h2>
-	@@ -71,32 +67,28 @@ conda activate mamba-env
+
+
+**1- Conda Installation**:
+-We have provided an Anaconda environment file for easy set-up. If you do not have Anaconda installed, you can get Miniconda from [HERE](https://docs.anaconda.com/free/miniconda/).
+
+Then, install ```bash mamba```:
+```bash
+conda install -c conda-forge mamba
+```
+
+If an individual encounters difficulties in implementing mamba in their primary setting, proceed to establish a fresh environment for mamba by following these steps:
+```bash
+conda create -n mamba-env -c conda-forge mamba
+conda activate mamba-env
+```
+
 **2- Conda Env Formation**:
 - To establish a conda environment, please execute the following code:
 ```bash
-mamba env create -f environment.yml
+mamba env create -n mega_protact -f environment.yml
 ```
 
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.
 
 ```bash
-mamba env create -f environment_pizsa.yml
+mamba env create -n pizsa -f environment_pizsa.yml
 ```
+
+**3- Activate Conda Env**:
+- Before running MEF-AlloSite, enable the conda environment.
+```bash
+mamba activate mega_protact
+```
+It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
+
+Next, proceed to install supplementary packages using the pip command as follows:
+
+```bash
+pip install -r requirements.txt
+```
+NOTE: Please make sure installation into the *mega_protact* environment. 
 
 **3- Activate Conda Env**:
 - Before running MEF-AlloSite, enable the conda environment.

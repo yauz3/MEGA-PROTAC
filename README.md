@@ -195,7 +195,7 @@ python3 STEP_13_Cluster_ranking_clusters.py
 - MEGA PROTAC defaults to perform docking PROTAC into the first-ranked protein in the first cluster. Kindly note that the parameters have been reorganised to demonstrate the functioning of MEGA PROTAC. Hence, the chosen value of 10 must be increased to a minimum of 200, as specified in the paper.
 
 ```bash
-python3 python3 STEP_14_PROTAC_docking.py
+python3 STEP_14_PROTAC_docking.py
 ```
 
 **Acknowledgements**

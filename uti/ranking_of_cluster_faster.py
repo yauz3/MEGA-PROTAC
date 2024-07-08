@@ -17,10 +17,10 @@ import rank_aggregation
 import concurrent.futures
 import json
 
-"""Please change this """
-FCC_path="/home/yavuz/fcc/scripts"
-voronota_path="/home/yavuz/voronota_1.22.3149"
-"""Please change this """
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) # ..
+FCC_path = os.path.join(PROJECT_ROOT, "bin/fcc/scripts")
+voronota_path = os.path.join(PROJECT_ROOT, "bin/voronota")
+fcc= os.path.join(PROJECT_ROOT, "bin/fcc")
 
 ########################################################################################################################
 def MDAnalysis_filter(proteins,input_path):

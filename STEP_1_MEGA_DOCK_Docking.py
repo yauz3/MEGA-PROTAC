@@ -31,7 +31,7 @@ random.seed(42)
 current_path = os.getcwd()
 
 # MEGA DOCK path to execute the program
-MEGA_DOCK_PATH = f"{current_path}/bin/MEGADOCK"
+MEGA_DOCK_PATH = f"{current_path}/bin/MEGADOCK-master"
 
 
 # Check_out_output_folder

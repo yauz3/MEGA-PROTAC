@@ -1,6 +1,5 @@
 scoria==1.0.5
-mdtraj 
-MDAnalysis 
-freesasa 
-kbutil @ git+https://github.com/thelahunginjeet/kbutil
-pyrankagg @ git+https://github.com/thelahunginjeet/pyrankagg 
+mdtraj
+MDAnalysis
+freesasa
+kbutil

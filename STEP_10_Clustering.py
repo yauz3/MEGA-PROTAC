@@ -64,4 +64,4 @@ for protein in pdb_listem:
 
 end_time = time.time()
 elapsed_time = end_time - start_time
-print("Run time:", elapsed_time, "seconds")
+print("İşlem süresi:", elapsed_time, "saniye")

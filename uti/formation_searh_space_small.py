@@ -32,10 +32,11 @@ from pymol import cmd
 import rank_aggregation
 from tqdm import tqdm
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) # ..
-FCC_path = os.path.join(PROJECT_ROOT, "bin/fcc/scripts")
-voronota_path = os.path.join(PROJECT_ROOT, "bin/voronota")
-fcc= os.path.join(PROJECT_ROOT, "bin/fcc")
+""""""
+FCC_path="/home/yavuz/fcc/scripts"
+voronota_path="/home/yavuz/voronota_1.22.3149"
+""""""
+
 
 
 def search_space_translate_with_ligand(protein,protein_list,input_path):

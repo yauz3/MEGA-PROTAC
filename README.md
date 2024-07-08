@@ -3,7 +3,6 @@
 
 **Pre-installation:**
 
-First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ), [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html), [Voromqa](https://github.com/kliment-olechnovic/voronota) and [FCC](https://github.com/haddocking/fcc) into **./bin** dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
@@ -14,20 +13,16 @@ Please refer to their documentation to install MEGA DOCK correctly before contin
 ](https://github.com/akiyamalab/MEGADOCK)
 
 Note: Before running the project, ensure that the library PATH is located on "./bin/MEGADOCK/Makefile" and that compiler settings are properly configured on your system.
-Put the MEGA DOCK file into the **./bin** dictionary.
-
-HINT: megadock and megadock-gpu should be in the folder. Otherwise, the MEGA PROTAC won't work because of failure installation for MEGADOCK.
+Put the MEGA DOCK file into the *bin* dictionary.
 
 
-*2*- DockQ [1] Installation: 
+*2*- DockQ [1] Installation:
 
 To install DockQ, please follow the protocol outlined in their official documentation:
 
 [DockQ GitHub Repository
 ](https://github.com/bjornwallner/DockQ)
-Put the DOCKQ file into the **./bin** dictionary.
-
-HINT: DockQ has been used in the validation step. MEGA PROTAC can be used without DockQ, but it is necessary for validation on test tests.
+Put the DOCKQ file into the *bin* dictionary.
 
 *3*- PIZSA [2] Installation:
 To install PIZSA, please follow the protocol outlined in their official documentation:
@@ -35,16 +30,25 @@ To install PIZSA, please follow the protocol outlined in their official document
 [PIZSA Website
 ](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html)
 
-Put the PIZSA file into the **./bin** dictionary.
+Put the PIZSA file into the *bin* dictionary.
 
-HINT: **./uti/ranking_PIZSA_cluster_rank.py** should be worked in the PIZSA environment.
-Be careful about the **err_dir** path in **./bin/run_PIZSA.py**
 
-*4*- Install [Voromqa](https://github.com/kliment-olechnovic/voronota); and put the Voromqa [4] file into **./bin**
+*4*- Install [Voromqa](https://github.com/kliment-olechnovic/voronota), [FCC](https://github.com/haddocking/fcc).
+Make sure FCC [3] and VoroMQA [4] paths are correct on the files:
 
-HINT: The "voromqa" binary should be after the successful installation of Voromqa.
+"../uti/clustering_fast.py"
 
-*5*- Install [FCC](https://github.com/haddocking/fcc), and put FCC [3] into **./bin**
+"../uti/formation_searh_space_small.py"
+
+"../uti/ranking_of_cluster_faster.py"
+
+The paths should be arranged before a run:
+
+FCC_path="../fcc/scripts"
+
+voronota_path="../voronota_1.22.3149"
+
+fcc="../fcc"
 
 
 <h2>How to set up the environment</h2>
@@ -67,29 +71,35 @@ conda activate mamba-env
 **2- Conda Env Formation**:
 - To establish a conda environment, please execute the following code:
 ```bash
-mamba env create -f environment.yml
+mamba env create -n mega_protact -f environment.yml
 ```
 
 - PIZSA requires Python2, which may lead to conflicts. The second environment has been specifically developed to mitigate that issue.
 
 ```bash
-mamba env create -f environment_pizsa.yml
+mamba env create -n pizsa -f environment_pizsa.yml
 ```
 
 **3- Activate Conda Env**:
 - Before running MEF-AlloSite, enable the conda environment.
 ```bash
-mamba activate mega_protac
+mamba activate mega_protact
 ```
-It should be noted that the terminal may need to be closed and re-opened to activate the mega_protac environment.
+It should be noted that the terminal may need to be closed and re-opened to activate the mega_protact environment.
 
 Next, proceed to install supplementary packages using the pip command as follows:
 
 ```bash
 pip install -r requirements.txt
 ```
-NOTE: Please make sure installation into the *mega_protac* environment. 
+NOTE: Please make sure installation into the *mega_protact* environment. 
 
+https://github.com/thelahunginjeet/pyrankagg/tree/master
+
+```bash
+python2 setup.py build
+python2 setup.py install
+```
 
 **4 - Make predictions**
 
@@ -185,7 +195,7 @@ python3 STEP_13_Cluster_ranking_clusters.py
 - MEGA PROTAC defaults to perform docking PROTAC into the first-ranked protein in the first cluster. Kindly note that the parameters have been reorganised to demonstrate the functioning of MEGA PROTAC. Hence, the chosen value of 10 must be increased to a minimum of 200, as specified in the paper.
 
 ```bash
-python3 STEP_14_PROTAC_docking.py
+python3 python3 STEP_14_PROTAC_docking.py
 ```
 
 **Acknowledgements**
@@ -214,4 +224,3 @@ python3 STEP_14_PROTAC_docking.py
 [8] Weng, Gaoqi, et al. "Integrative modeling of PROTAC-mediated ternary complexes." Journal of Medicinal Chemistry 64.21 (2021): 16271-16281.
 
 [9] Rao, Arjun, et al. "Bayesian optimization for ternary complex prediction (BOTCP)." Artificial Intelligence in the Life Sciences 3 (2023): 100072.
-

@@ -3,7 +3,7 @@
 
 **Pre-installation:**
 
-First, create a *bin* dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into *bin* dictionary.
+First, create a **./bin** dictionary and put [MEGADOCK](https://github.com/akiyamalab/MEGADOCK), [DockQ](https://github.com/bjornwallner/DockQ) and [PIZSA](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html) into **./bin** dictionary.
 
 *1*- MEGA DOCK Installation:
 Before proceeding with the installation, ensure that MEGA DOCK is installed on your system. It is highly recommended to follow the original documentation provided by the developers for detailed instructions:
@@ -14,7 +14,7 @@ Please refer to their documentation to install MEGA DOCK correctly before contin
 ](https://github.com/akiyamalab/MEGADOCK)
 
 Note: Before running the project, ensure that the library PATH is located on "./bin/MEGADOCK/Makefile" and that compiler settings are properly configured on your system.
-Put the MEGA DOCK file into the *bin* dictionary.
+Put the MEGA DOCK file into the **./bin** dictionary.
 
 
 *2*- DockQ [1] Installation:
@@ -23,7 +23,7 @@ To install DockQ, please follow the protocol outlined in their official document
 
 [DockQ GitHub Repository
 ](https://github.com/bjornwallner/DockQ)
-Put the DOCKQ file into the *bin* dictionary.
+Put the DOCKQ file into the **./bin** dictionary.
 
 *3*- PIZSA [2] Installation:
 To install PIZSA, please follow the protocol outlined in their official documentation:
@@ -31,7 +31,7 @@ To install PIZSA, please follow the protocol outlined in their official document
 [PIZSA Website
 ](http://cospi.iiserpune.ac.in/pizsa/Download/Download.html)
 
-Put the PIZSA file into the *bin* dictionary.
+Put the PIZSA file into the **./bin** dictionary.
 
 
 *4*- Install [Voromqa](https://github.com/kliment-olechnovic/voronota), [FCC](https://github.com/haddocking/fcc).

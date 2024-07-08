@@ -37,11 +37,11 @@ Put the PIZSA file into the **./bin** dictionary.
 *4*- Install [Voromqa](https://github.com/kliment-olechnovic/voronota), [FCC](https://github.com/haddocking/fcc).
 Make sure FCC [3] and VoroMQA [4] paths are correct on the files:
 
-"../uti/clustering_fast.py"
+"./uti/clustering_fast.py"
 
-"../uti/formation_searh_space_small.py"
+"./uti/formation_searh_space_small.py"
 
-"../uti/ranking_of_cluster_faster.py"
+"./uti/ranking_of_cluster_faster.py"
 
 The paths should be arranged before a run:
 

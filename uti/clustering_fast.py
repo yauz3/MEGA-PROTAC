@@ -52,11 +52,9 @@ def cluster(input_path, output_name="cluster_5_3_model", min_number=3, threshold
     subprocess.run(fifth_command, capture_output=True, text=True)
 
     print("Sixth step")
-    sixth_command = [
-        "conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/ppretty_clusters.py", f"clusters_{threshold}.out",
-        "pdb.list", ">", f"{output_name}"
-    ]
-    subprocess.run(sixth_command, capture_output=True, text=True)
+    
+    sixth_command = f"conda run -n pizsa python2 {FCC_path}/ppretty_clusters.py clusters_{threshold}.out pdb.list > {output_name}"
+    subprocess.run(["bash", "-c", sixth_command], capture_output=True, text=True)
 
     print("Clustering is finished!")
     return 'cluster_5_3_model'

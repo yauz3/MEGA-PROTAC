@@ -1,6 +1,7 @@
 <h1> MEGA PROTAC: PROTAC-Mediated Ternary Complex Formation Pipeline based on MEGADOCK with Sequential Filtering integrated with Rank Aggregation. </h1>
 
 HINT 1: MEGA PROTAC default parameters have been set to execute MEGA PROTAC for only one protein. It should be arranged for use in research or validation.
+
 HINT 2: MEGA PROTAC produces thousands of proteins requiring MASSIVE space. The final outputs can be found in the ..._rotate file in the outputs dictionary. 
 
 **Pre-installation:**

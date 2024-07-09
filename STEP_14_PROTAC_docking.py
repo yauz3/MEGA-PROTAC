@@ -125,7 +125,7 @@ def get_first_cluster(protein,cluster_order,protein_number):
         input_protein = protein.split("_")[0]
         # PROTAC docking
         protac_into_protein_protein(
-            target=f"{current_path}/outputs/Megadock_OUT/{protein}_rotate",
+            target=f"{current_path}/outputs/Megadock_OUT/{input_protein}_rotate/{protein}.pdb",
             receptor=f"{current_path}/test_inputs/{input_protein}/{input_protein}_protac.pdb")
 
 get_first_cluster(protein="5t35-DA",

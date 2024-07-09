@@ -4,6 +4,7 @@ import shutil
 import re
 import subprocess
 
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) # ..
 FCC_path = os.path.join(PROJECT_ROOT, "bin/fcc/scripts")
 voronota_path = os.path.join(PROJECT_ROOT, "bin/voronota")
@@ -18,20 +19,44 @@ def prepare_input_file(input_path,file_list):
     return "pdb.list"
 
 
-def cluster(input_path,output_name="cluster_5_3_model",min_number=3,threshold=0.5):
+def cluster(input_path, output_name="cluster_5_3_model", min_number=3, threshold=0.5):
     os.chdir(input_path)
-    print("first step")
-    os.system(f"for pdb in $( cat pdb.list ); do python2 {FCC_path}/pdb_chainxseg.py $pdb > temp; mv temp $pdb; done")
-    print("second step")
-    os.system(f'python2 {FCC_path}/make_contacts.py -f pdb.list -n 8 -e {fcc}/src/contact_fcc')
-    print("third step")
-    os.system(r"sed -e 's/pdb/contacts/' pdb.list | sed -e '/^$/d' > pdb.contacts")
-    print("fourth step")
-    os.system(f'python2 {FCC_path}/calc_fcc_matrix.py -f pdb.contacts -o fcc_matrix.out')
-    print("five step")
-    os.system(f'python2 {FCC_path}/cluster_fcc.py fcc_matrix.out {threshold} -o clusters_{threshold}.out -c {min_number}')
-    print("six step")
-    os.system(
-        f'python2 {FCC_path}/ppretty_clusters.py clusters_{threshold}.out pdb.list > {output_name}')
-    print("seven ")
+
+    print("First step")
+    first_command = f"for pdb in $(cat pdb.list); do python2 {FCC_path}/pdb_chainxseg.py $pdb > temp; mv temp $pdb; done"
+    subprocess.run(["conda", "run", "-n", "pizsa", "bash", "-c", first_command], capture_output=True, text=True)
+
+    print("Second step")
+    second_command = [
+        "conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/make_contacts.py", "-f", "pdb.list", "-n", "8", "-e",
+        f"{fcc}/src/contact_fcc"
+    ]
+    subprocess.run(second_command, capture_output=True, text=True)
+
+    print("Third step")
+    third_command = "sed -e 's/pdb/contacts/' pdb.list | sed -e '/^$/d' > pdb.contacts"
+    subprocess.run(["conda", "run", "-n", "pizsa", "bash", "-c", third_command], capture_output=True, text=True)
+
+    print("Fourth step")
+    fourth_command = [
+        "conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/calc_fcc_matrix.py", "-f", "pdb.contacts", "-o",
+        "fcc_matrix.out"
+    ]
+    subprocess.run(fourth_command, capture_output=True, text=True)
+
+    print("Fifth step")
+    fifth_command = [
+        "conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/cluster_fcc.py", "fcc_matrix.out", str(threshold), "-o",
+        f"clusters_{threshold}.out", "-c", str(min_number)
+    ]
+    subprocess.run(fifth_command, capture_output=True, text=True)
+
+    print("Sixth step")
+    sixth_command = [
+        "conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/ppretty_clusters.py", f"clusters_{threshold}.out",
+        "pdb.list", ">", f"{output_name}"
+    ]
+    subprocess.run(sixth_command, capture_output=True, text=True)
+
+    print("Clustering is finished!")
     return 'cluster_5_3_model'

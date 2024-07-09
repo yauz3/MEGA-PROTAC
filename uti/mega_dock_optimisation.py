@@ -70,7 +70,9 @@ def megadock(
     megadock_out=ouput_file_path
     ouput_file_path=f"{ouput_file_path}/{only_target_name}"
     os.chdir(MEGA_DOCK_PATH)
-    os.system(f"./megadock-gpu -R {target} -L {ligand} -N {output_number} -o {ouput_file_path}/{only_target_name}-{only_ligand_name}.out "
+    """os.system(f"./megadock-gpu -R {target} -L {ligand} -N {output_number} -o {ouput_file_path}/{only_target_name}-{only_ligand_name}.out "
+              f" -r {rotation} -D {degree} -a {receptor_pel} -b {ligand_pel} -v {voxel} -f {score}")"""
+    os.system(f"./megadock -R {target} -L {ligand} -N {output_number} -o {ouput_file_path}/{only_target_name}-{only_ligand_name}.out "
               f" -r {rotation} -D {degree} -a {receptor_pel} -b {ligand_pel} -v {voxel} -f {score}")
     print("Docking is finished!")
 

@@ -3,15 +3,15 @@ channels:
   - conda-forge
   - schrodinger
 dependencies:
-  - python=3.8.*
+  - python=3.10.12
   - biopython
   - ca-certificates
   - openssl
-  - pymol=2.5.0
   - vtk
   - certifi
   - pymol-open-source
   - pandas
   - tqdm
   - scipy
+  - openbabel
 prefix: /home/yavuz/anaconda3/envs/mega_protac

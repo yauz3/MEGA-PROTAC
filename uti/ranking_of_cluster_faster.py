@@ -350,7 +350,13 @@ def vormqa(protein_list,input_path):
         for protein in protein_list:
             pdb_list_file.write(f"{protein}.pdb" + "\n")
 
-    os.system(f'python2 {FCC_path}/make_contacts.py -f pdb.list -n 8')
+    process = subprocess.run(
+        ["conda", "run", "-n", "pizsa", "python2", f"{FCC_path}/make_contacts.py", "-f", "pdb.list", "-n", "8"],
+        capture_output=True,
+        text=True
+    )
+    #print("stdout:", process.stdout)
+    #print("stderr:", process.stderr)
     os.system(r"sed -e 's/pdb/contacts/' pdb.list | sed -e '/^$/d' > pdb.contacts")
 
     output_dictionary = {}

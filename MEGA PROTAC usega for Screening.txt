@@ -1,0 +1,49 @@
+# Preparation of PDB Files for PROTAC Modeling
+
+This repository provides guidelines for preparing **Protein Data Bank (PDB) files** necessary for computational studies involving **PROTACs**.
+
+## Required PDB Files
+
+To conduct modeling and docking studies, three distinct PDB files are required:
+
+1. **Target Protein Complexed with a Small Ligand (Warhead)**  
+2. **E3 Ligase Complexed with a Small Ligand (Anchor)**  
+3. **PROTAC Molecule (Containing the Warhead, Linker, and Anchor)**  
+
+## Preparation Steps
+
+### 1. Target Protein + Warhead Complex
+- If a **crystal structure** of the target protein bound to a suitable **warhead** (small molecule ligand) is available in the **Protein Data Bank (PDB)**, use it directly.  
+- If no such structure exists, perform **local docking** to generate the complex.  
+  - **Recommended software**: [PLANTS (Protein-Ligand ANT System)](https://www.tcd.uni-bonn.de/plants_info/)  
+  - **Why?** PLANTS provides accurate **pose prediction** and **scoring**.  
+- To extract the warhead from a PROTAC molecule, use **fragmentation**:
+  - **Manual method**: Extract the warhead manually.
+  - **Automated method**: Use [RDKit](https://www.rdkit.org/) for **molecular manipulation**.
+
+### 2. E3 Ligase + Anchor Complex
+- **E3 ligases** are well-characterized, and their complexes with **anchor ligands** can often be found in the PDB.  
+- Steps to prepare the structure:
+  1. Search for a suitable **E3-ligase complex** in the [PDB](https://www.rcsb.org/).  
+  2. Refine the selected structure:
+     - Remove unnecessary **water molecules**.
+     - Add any **missing residues** to maintain completeness.
+
+### 3. PROTAC Molecule Construction
+- The complete **PROTAC** molecule consists of:
+  - **Warhead** (binds the target protein)
+  - **Linker** (connects both ends)
+  - **Anchor** (binds the E3 ligase)
+- **Structure Generation Tools**:
+  - [RDKit](https://www.rdkit.org/) – for structure construction and optimization.
+  - [Open Babel (Obabel)](https://openbabel.org/wiki/Main_Page) – for molecular file format conversion and structure refinement.
+- The final **3D conformation** of the PROTAC must be **energy-minimized** using appropriate **force field methods** to ensure structural stability.
+
+---
+
+## References
+- PLANTS Docking: [https://www.tcd.uni-bonn.de/plants_info/](https://www.tcd.uni-bonn.de/plants_info/)
+- RDKit: [https://www.rdkit.org/](https://www.rdkit.org/)
+- Open Babel: [https://openbabel.org/wiki/Main_Page](https://openbabel.org/wiki/Main_Page)
+- PDB Database: [https://www.rcsb.org/](https://www.rcsb.org/)
+
